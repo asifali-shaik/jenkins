@@ -1,24 +1,31 @@
-pipeline {
+pipeline{
     agent any
-    stages {
-        stage('printing the hello world ') {
-            steps {
-                echo 'Hello world!'
-            }
-        }
+    stages{
         stage('build'){
             steps{
-                echo 'building the pipeline.'
+                script{
+                    sh """
+                        echo "build the image"
+                    """
+                }
             }
         }
         stage('test'){
             steps{
-                echo 'testing the application.!'
+                script{
+                    sh """
+                        echo "testing the image"
+                    """
+                }
             }
         }
         stage('deploy'){
             steps{
-                echo 'deploying the application'
+                script{
+                    sh """
+                        echo "deploy the image"
+                    """
+                }
             }
         }
     }
