@@ -24,6 +24,7 @@ pipeline{
                     sh """
                         echo "testing the image"
                         echo $DISABLE_AUTH
+                        echo $DB_ENGINE
                     """
                 }
             }
