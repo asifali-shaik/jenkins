@@ -19,6 +19,7 @@ pipeline{
                 script{
                     sh """
                         echo "testing the image"
+                        exit 1
                     """
                 }
             }
@@ -37,6 +38,13 @@ pipeline{
         always{
             echo 'happy !'
         }
+        success{
+            echo 'pipeline success !!'
+        }
+        failure{
+            echo 'pipeline faliure !!!'
+        }
+
     }
 }  
 
