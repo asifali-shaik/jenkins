@@ -4,8 +4,9 @@ pipeline{
             label 'roboshop'
         }
     }
-    envrionment{
-        NAME= "jenkins"
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
     }
     stages{
         stage('build'){
@@ -22,7 +23,7 @@ pipeline{
                 script{
                     sh """
                         echo "testing the image"
-                        echo $NAME
+                        echo $DISABLE_AUTH
                     """
                 }
             }
