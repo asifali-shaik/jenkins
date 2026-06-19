@@ -33,4 +33,9 @@ pipeline{
             }
         }
     }
-}
+}   // post build
+    post{
+        always{
+            echo 'hello there pipeline is working!'
+        }
+    }
