@@ -4,6 +4,9 @@ pipeline{
             label 'roboshop'
         }
     }
+    envrionment{
+        name= "jenkins"
+    }
     stages{
         stage('build'){
             steps{
@@ -19,7 +22,7 @@ pipeline{
                 script{
                     sh """
                         echo "testing the image"
-                        exit 1
+                        echo $name
                     """
                 }
             }
