@@ -5,7 +5,7 @@ pipeline{
         }
     }
     envrionment{
-        name= "jenkins"
+        NAME= "jenkins"
     }
     stages{
         stage('build'){
@@ -22,7 +22,7 @@ pipeline{
                 script{
                     sh """
                         echo "testing the image"
-                        echo $name
+                        echo $NAME
                     """
                 }
             }
